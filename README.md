@@ -1,7 +1,8 @@
 # Lab 10 - Starter
 Tiffany Zhong - A15953437
 
-canny.io page link: https://cse110-lab10-zhongtiff.canny.io/
+canny.io roadmap page: https://cse110-lab10-zhongtiff.canny.io/
+canny.io feature-requests page: https://cse110-lab10-zhongtiff.canny.io/feature-requests
 
 index link: https://zhongtiff.github.io/Lab10_Starter/index.html
 
