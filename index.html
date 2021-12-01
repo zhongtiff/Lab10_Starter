@@ -20,7 +20,7 @@
 </head>
 
 <body>
-  
+
   <header>
     <nav>
       <a href="speechSynth.html" title="Go to speech synthesizer">Speech Synthesizer</a>
@@ -48,25 +48,27 @@
     </section>
   </main>
 
-    <script>
+  <script>
 
-      ID = Math.floor(Math.random() * Date.now() * Math.random());
-      var user = {
-        "key": ID,
-      };
+    let ID = Math.floor(Math.random() * Date.now() * Math.random());
 
-      var ldclient = LDClient.initialize('61a4744898962e0fabee0675', user);
-      
-      function render() {
-        var shouldShow = ldclient.variation("blue-background", false);
-        if(shouldShow == true){
-          document.querySelector("body").classList.add("blue");
-        }
+    var user = {
+      key: ID,
+    };
+
+    var ldclient = LDClient.initialize('61a6ecf2846cbc11ad61bbdd', user);
+
+    function render() {
+      var shouldShow = ldclient.variation('blue-background', false);
+      if (shouldShow == true) {
+        document.querySelector("body").classList.add("blue");
       }
-      
-      ldclient.on('ready', render);
-      ldclient.on('change', render);
-    </script>
+    }
+
+    ldclient.on('ready', render);
+    ldclient.on('change', render);
+  </script>
+
 
 </body>
 

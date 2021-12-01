@@ -11,6 +11,9 @@
   <!-- Main Stylesheet & Scripts -->
   <link rel="stylesheet" href="assets/styles/global.css" />
   <script src="assets/scripts/speechSynth.js" type="module"></script>
+
+  <!-- Added Launchdarkly-->
+  <script src="https://unpkg.com/launchdarkly-js-client-sdk@2"></script>
 </head>
 
 <body>
@@ -32,6 +35,28 @@
       <button>Press to Talk</button>
     </section>
   </main>
+
+  <script>
+
+    let ID = Math.floor(Math.random() * Date.now() * Math.random());
+
+    var user = {
+      key: ID,
+    };
+
+    var ldclient = LDClient.initialize('61a6ecf2846cbc11ad61bbdd', user);
+
+    function render() {
+      var shouldShow = ldclient.variation('large-button', false);
+      if (shouldShow == true) {
+        document.querySelector("button").style.width = "650px";
+      }
+    }
+
+    ldclient.on('ready', render);
+    ldclient.on('change', render);
+  </script>
+
 </body>
 
 </html>
